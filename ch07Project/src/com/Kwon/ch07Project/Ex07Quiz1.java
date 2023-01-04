@@ -1,20 +1,33 @@
 package com.Kwon.ch07Project;
 
+
 public class Ex07Quiz1 {
 
 	public static void main(String[] args) {
+		
+		StudentDTO sdto = new StudentDTO("Kwon", 1, "1", "ezen", 77777777); //6ë²ˆ;
+		
+		sdto.getName();
+		sdto.getNo();
+		sdto.getGrade();
+		sdto.getAddress();
+		sdto.getPhone(); //7ë²ˆ;
+		
+		sdto.setName("yong");
+		sdto.setNo(2);
+		sdto.setGrade("2");
+		sdto.setAddress("academy");
+		sdto.setPhone(88888888);//8ë²ˆ;
+		//longì¸ë° ì™œ out of range??
+		
+		System.out.println(sdto.getName());
+		System.out.println(sdto.getNo());
+		System.out.println(sdto.getGrade());
+		System.out.println(sdto.getAddress());
+		System.out.println(sdto.getPhone());//9ë²ˆ;
+		
+		
 
-	}//main method;;
+	}//main method;
 
 }//main class;
-
-/*1. StudentDTO¸¦ ¸¸µê(StudentDTO.java)
- *2. ¸â¹öº¯¼ö¸¦ ÀüºÎ Á¢±Ù Á¦¾îÀÚ¸¦ private·Î ÇÑ´Ù.
- *3. ¸â¹öº¯¼ö´Â name,no(ÇĞ¹ø),grade(ÇĞ³â),address,phoneÀ¸·Î ÇÑ´Ù.
- *4. »ı¼ºÀÚ´Â ±âº»Çü°ú ¸ğµç ¸â¹öº¯¼ö¸¦ ÆÄ¶ó¸ŞÅÍ·Î ÇÏ´Â »ı¼ºÀÚ, name, no, grade¸¸ ÆÄ¶ó¸ŞÅÍ·Î ÇÏ´Â »ı¼ºÀÚ¸¦ ¸¸µê(3°³)
- *5. Getter ¿Í Setter ¸Ş¼­µå¸¦ ¸¸µê 
- *6. main ¸Ş¼­µå¿¡¼­ StudentDTO°´Ã¼¸¦ sdto·Î ÇÏ¿© ¸¸µå´Âµ¥ °´Ã¼ »ı¼º½Ã StudentDTOÀÇ ¸ğµç º¯¼ö¸¦ »ç¿ëÇÏ´Â »ı¼ºÀÚ¸¦ »ç¿ëÇÏ¿© ¸¸µê(»ı¼ºÀÚ ¼ø¼­´ë·Î,°ªÀº ÀÓÀÇ·Î)
- *7. StudentDTOÀÇ °¢ ¸â¹öº¯¼ö¸¦ Ãâ·Â
- *8. StudentDTOÀÇ °¢ ¸â¹öº¯¼ö¸¦ º¯°æÇØº¸½Ã¿À (°ªÀº ÀÓÀÇ·Î)
- *9. 8¹ø Ç®ÀÌ ÈÄ ¸â¹öº¯¼ö¸¦ Ãâ·Â
- */
