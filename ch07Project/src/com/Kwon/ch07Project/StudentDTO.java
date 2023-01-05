@@ -1,66 +1,66 @@
 package com.Kwon.ch07Project;
 
 public class StudentDTO {
-	
-		private String name;
-		private int no;
-		private String grade;
-		private String address;
-		private long phone;
-		
-		public StudentDTO(){}//4-1ë²ˆ
-		public StudentDTO(String name, int no, String grade, String address, long phone){
-			super();
-			this.name = name;
-			this.no = no;
-			this.grade = grade;
-			this.phone = phone;
-		}//4-2ë²ˆ;
-		
-		public StudentDTO(String name, int no, String grade) {}//4-3ë²ˆ;
-		
-		//5ë²ˆ ì‹œì‘
-		public String getName() {
-			return name;
-		}
-		public void setName(String name) {
-			this.name = name;
-		}
-		public int getNo() {
-			return no;
-		}
-		public void setNo(int no) {
-			this.no = no;
-		}
-		public String getGrade() {
-			return grade;
-		}
-		public void setGrade(String grade) {
-			this.grade = grade;
-		}
-		public String getAddress() {
-			return address;
-		}
-		public void setAddress(String address) {
-			this.address = address;
-		}
-		public long getPhone() {
-			return phone;
-		}
-		public void setPhone(long phone) {
-			this.phone = phone;
-		}
-		
+	   
+    private String name;
+    private int no;
+    private String grade;
+    private String address;
+    private long phoneL;
+    
+    public StudentDTO(){}//4-1¹ø
+    public StudentDTO(String name, int no, String grade, String address, long phone){
+       super();
+       this.name = name;
+       this.no = no;
+       this.grade = grade;
+       this.phoneL = phone;
+    }//4-2¹ø;
+    
+    public StudentDTO(String name, int no, String grade) {}//4-3¹ø;
+    
+    //5¹ø ½ÃÀÛ
+    public String getName() {
+       return name;
+    }
+    public void setName(String name) {
+       this.name = name;
+    }
+    public int getNo() {
+       return no;
+    }
+    public void setNo(int no) {
+       this.no = no;
+    }
+    public String getGrade() {
+       return grade;
+    }
+    public void setGrade(String grade) {
+       this.grade = grade;
+    }
+    public String getAddress() {
+       return address;
+    }
+    public void setAddress(String address) {
+       this.address = address;
+    }
+    public long getPhone() {
+       return phoneL;
+    }
+    public void setPhone(long phone) {
+       this.phoneL = phone;
+    }
+    
+    
 }
 
-/*1. StudentDTOë¥¼ ë§Œë“¦(StudentDTO.java)
- *2. ë©¤ë²„ë³€ìˆ˜ë¥¼ ì „ë¶€ ì ‘ê·¼ ì œì–´ìë¥¼ privateë¡œ í•œë‹¤.
- *3. ë©¤ë²„ë³€ìˆ˜ëŠ” name,no(í•™ë²ˆ),grade(í•™ë…„),address,phoneìœ¼ë¡œ í•œë‹¤.
- *4. ìƒì„±ìëŠ” ê¸°ë³¸í˜•ê³¼ ëª¨ë“  ë©¤ë²„ë³€ìˆ˜ë¥¼ íŒŒë¼ë©”í„°ë¡œ í•˜ëŠ” ìƒì„±ì, name, no, gradeë§Œ íŒŒë¼ë©”í„°ë¡œ í•˜ëŠ” ìƒì„±ìë¥¼ ë§Œë“¦(3ê°œ)
- *5. Getter ì™€ Setter ë©”ì„œë“œë¥¼ ë§Œë“¦ 
- *6. main ë©”ì„œë“œì—ì„œ StudentDTOê°ì²´ë¥¼ sdtoë¡œ í•˜ì—¬ ë§Œë“œëŠ”ë° ê°ì²´ ìƒì„±ì‹œ StudentDTOì˜ ëª¨ë“  ë³€ìˆ˜ë¥¼ ì‚¬ìš©í•˜ëŠ” ìƒì„±ìë¥¼ ì‚¬ìš©í•˜ì—¬ ë§Œë“¦(ìƒì„±ì ìˆœì„œëŒ€ë¡œ,ê°’ì€ ì„ì˜ë¡œ)
- *7. StudentDTOì˜ ê° ë©¤ë²„ë³€ìˆ˜ë¥¼ ì¶œë ¥
- *8. StudentDTOì˜ ê° ë©¤ë²„ë³€ìˆ˜ë¥¼ ë³€ê²½í•´ë³´ì‹œì˜¤ (ê°’ì€ ì„ì˜ë¡œ)
- *9. 8ë²ˆ í’€ì´ í›„ ë©¤ë²„ë³€ìˆ˜ë¥¼ ì¶œë ¥
- */
-
+/*1. StudentDTO¸¦ ¸¸µê(StudentDTO.java)
+*2. ¸â¹öº¯¼ö¸¦ ÀüºÎ Á¢±Ù Á¦¾îÀÚ¸¦ private·Î ÇÑ´Ù.
+*3. ¸â¹öº¯¼ö´Â name,no(ÇĞ¹ø),grade(ÇĞ³â),address,phoneÀ¸·Î ÇÑ´Ù.
+*4. »ı¼ºÀÚ´Â ±âº»Çü°ú ¸ğµç ¸â¹öº¯¼ö¸¦ ÆÄ¶ó¸ŞÅÍ·Î ÇÏ´Â »ı¼ºÀÚ, name, no, grade¸¸ ÆÄ¶ó¸ŞÅÍ·Î ÇÏ´Â »ı¼ºÀÚ¸¦ ¸¸µê(3°³)
+*5. Getter ¿Í Setter ¸Ş¼­µå¸¦ ¸¸µê 
+*6. main ¸Ş¼­µå¿¡¼­ StudentDTO°´Ã¼¸¦ sdto·Î ÇÏ¿© ¸¸µå´Âµ¥ °´Ã¼ »ı¼º½Ã StudentDTOÀÇ ¸ğµç º¯¼ö¸¦ »ç¿ëÇÏ´Â »ı¼ºÀÚ¸¦ »ç¿ëÇÏ¿© ¸¸µê(»ı¼ºÀÚ ¼ø¼­´ë·Î,°ªÀº ÀÓÀÇ·Î)
+*7. StudentDTOÀÇ °¢ ¸â¹öº¯¼ö¸¦ Ãâ·Â
+*8. StudentDTOÀÇ °¢ ¸â¹öº¯¼ö¸¦ º¯°æÇØº¸½Ã¿À (°ªÀº ÀÓÀÇ·Î)
+*9. 8¹ø Ç®ÀÌ ÈÄ ¸â¹öº¯¼ö¸¦ Ãâ·Â
+*/

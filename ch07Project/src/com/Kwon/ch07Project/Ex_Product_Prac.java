@@ -6,16 +6,16 @@ public class Ex_Product_Prac {
 		
 		
 		
-		Buyer b = new Buyer();
+		Buyer1 b = new Buyer1();
 		
-		Television tv = new Television();
-		Computer com = new Computer();
-		Audio audio = new Audio();
+		Television1 tv = new Television1();
+		Computer1 com = new Computer1();
+		Audio1 audio = new Audio1();
 		
-		Product p = new Product();
-		Product p1 = new Television();
-		Product p2 = new Computer();
-		Product p3 = new Audio();
+		Product1 p = new Product1();
+		Product1 p1 = new Television1();
+		Product1 p2 = new Computer1();
+		Product1 p3 = new Audio1();
 		
 //		void buy (Product p) {
 //			money -= p.price;
@@ -32,17 +32,17 @@ public class Ex_Product_Prac {
 }// main class;;
 
 
-class Product{
+class Product1{
 	int price;
 	int bonusPoint;
 	
 }
 
-class Television extends Product{}
-class Computer extends Product{}
-class Audio extends Product{}
+class Television1 extends Product1{}
+class Computer1 extends Product1{}
+class Audio1 extends Product1{}
 
-class Buyer{
+class Buyer1{
 	int money = 1000;
 	int bonusPoint = 0;
 }
