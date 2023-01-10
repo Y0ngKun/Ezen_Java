@@ -40,7 +40,7 @@ static void deleteTempFiles() {}
 static boolean enoughSpace() {return false;}
 static boolean enoughMemory() {return true;}
 
-
+}//main class;
 
 class SpaceException extends Exception{
 	//예외처리 클래스 Exception을 상속한 개발자가 만드는 예외처리 클래스
@@ -57,4 +57,4 @@ class MemoryException extends Exception{
 	}
 }
 	
-}//main class;
+
