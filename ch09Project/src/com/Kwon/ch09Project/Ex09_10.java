@@ -6,7 +6,7 @@ public class Ex09_10 {
 		
 		int iVal = 100;
 		String strVal = String.valueOf(iVal);
-//String클래스의 클래스형(static)메소드인 valueOf()는 파라메터의 데이터형을 달리하는 오버로딩된 메소드들이다.
+		//String클래스의 클래스형(static)메소드인 valueOf()는 파라메터의 데이터형을 달리하는 오버로딩된 메소드들이다.
 		
 		double dVal = 200.0;
 		String strVal2 = dVal + ""; //문자열과 결합하면 문자열(+는 더하기가 아니고 결합연산자)
