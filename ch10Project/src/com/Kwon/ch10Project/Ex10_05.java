@@ -1,62 +1,52 @@
 package com.Kwon.ch10Project;
 
-import java.util.Calendar;
-import java.util.Iterator;
-
-import javax.xml.stream.events.EndDocument;
+import java.util.*;
 
 public class Ex10_05 {
 	
 	public static void main(String[] args) {
 		
 		if (args.length !=2) {
-			System.out.println("ì…ë ¥ë²• : 2022 11");
+			System.out.println("  Usage : java Ex10_5 2019 9");
 			return;
 		}
 		
 		int year = Integer.parseInt(args[0]);
 		int month = Integer.parseInt(args[1]);
-		
 		int START_DAY_OF_WEEK = 0;
 		int END_DAY = 0;
 		
-		Calendar sDay = Calendar.getInstance(); //ì‹œì‘ì¼
-		Calendar eDay = Calendar.getInstance(); //ë§ˆì§€ë§‰ì¼
+		Calendar sDay = Calendar.getInstance(); //½ÃÀÛÀÏ, //ÇöÀç½Ã°¢À» ³ªÅ¸³»´Â °´Ã¼
+		Calendar eDay = Calendar.getInstance(); //¸¶Áö¸·ÀÏ //ÇöÀç½Ã°¢À» ³ªÅ¸³»´Â °´Ã¼
 		
-		//argsë¡œ ì…ë ¥ ë°›ì€ ë‹¬ì„ 1ì¼ë¡œ sDayë¥¼ ì„¤ì •
+		//args·Î ÀÔ·Â ¹ŞÀº ´ŞÀ» 1ÀÏ·Î sDay¸¦ ¼³Á¤
 		sDay.set(year, month-1, 1);
-		sDay.set(year, month, 1);
+		eDay.set(year, month, 1);
 		
-		//ë‹¤ìŒë‹¬ì˜ ì²«ë‚ (12ì›” 1ì¼)ì—ì„œ í•˜ë£¨ë¥¼ ë¹¼ë©´ í˜„ì¬ë‹¬ì˜ ë§ˆì§€ë§‰ ë‚ (11ì›” 30ì¼)ì´ ëœë‹¤.
+		//´ÙÀ½´ŞÀÇ Ã¹³¯(12¿ù 1ÀÏ)¿¡¼­ ÇÏ·ç¸¦ »©¸é ÇöÀç´ŞÀÇ ¸¶Áö¸· ³¯(11¿ù 30ÀÏ)ÀÌ µÈ´Ù.
 		eDay.add(Calendar.DATE, -1);
+		//À§ ÄÚµå ½ÇÇàÇÏ¸é eDay°´Ã¼¿¡´Â Àü´Ş ¸»ÀÏÀÚ°¡ ÁöÁ¤µÈ °´Ã¼°ªÀÌ ÁöÁ¤µÈ´Ù
+//		END_DAY = sDay.getActualMaximum(Calendar.DATE); ¸¦ »ç¿ëÇØµµ µÊ
 		
-		//í˜„ì¬ ìš”ì¼ì´ ë¬´ìŠ¨ ìš”ì¼ì¸ì§€ ì•Œì•„ë‚¸ë‹¤.
+		//ÇöÀç ¿äÀÏÀÌ ¹«½¼ ¿äÀÏÀÎÁö ¾Ë¾Æ³½´Ù.
 		START_DAY_OF_WEEK = sDay.get(Calendar.DAY_OF_WEEK);
+		//START_DAY_OF_WEEK ´Â 1(ÀÏ¿äÀÏ)ºÎÅÍ 7 sDay´Â ÀÔ·Â¹ŞÀº ¿ùÀÌ 1ÀÏÀÌ¹Ç·Î 1ÀÏÀÇ ¿äÀÏ°ª ¹İÈ¯
+		//eDay¿¡ ÁöÁ¤µÈ ³¯Â¥¸¦ ¾ò¾î¿Â´Ù.
+		END_DAY = eDay.get(Calendar.DATE); //eDay Camendar °´Ã¼°¡ °¡Áø ³¯Â¥ °ªÀ» °¡Á®¿È
 		
-		//eDayì— ì§€ì •ëœ ë‚ ì§œë¥¼ ì–»ì–´ì˜¨ë‹¤.
-		END_DAY = eDay.get(Calendar.DATE);
-		
-		
-		System.out.println("       " + args[0] + "ë…„" + args[1] + "ì›”");
-		System.out.println(" SU MO TU WE TH FR SA");
-		
-		//í•´ë‹¹ ì›”ì˜ 1ì¼ì´ ì–´ëŠ ìš”ì¼ì¸ì§€ì— ë”°ë¼ì„œ ê³µë°±ì„ ì¶œë ¥í•œë‹¤.
-		//ë§Œì¼ 1ì¼ì´ ìˆ˜ìš”ì¼ì´ë¼ë©´ ê³µë°±ì„ ì„¸ ë²ˆ ì°ëŠ”ë‹¤. (ì¼ìš”ì¼ë¶€í„° ì‹œì‘)
-		
+		System.out.println("        " + args[0] + "³â" + args[1] + "¿ù");
+		System.out.println("  SU  MO  TU  WE  TH  FR  SA");
+//		
+//		//ÇØ´ç ¿ùÀÇ 1ÀÏÀÌ ¾î´À ¿äÀÏÀÎÁö¿¡ µû¶ó¼­ °ø¹éÀ» Ãâ·ÂÇÑ´Ù.
+//		//¸¸ÀÏ 1ÀÏÀÌ ¼ö¿äÀÏÀÌ¶ó¸é °ø¹éÀ» ¼¼ ¹ø Âï´Â´Ù. (ÀÏ¿äÀÏºÎÅÍ ½ÃÀÛ)
+
 		for (int i = 1; i < START_DAY_OF_WEEK; i++) 
-			System.out.println("   ");
+			System.out.print("");
 			
-			for (int i = 1,n = START_DAY_OF_WEEK; i <= END_DAY; i++, n++) {
-				System.out.println((i < 10)? " " + i : " " +i);
-				if (n%7==0) System.out.println();
-			
+			for (int i = 1, n = START_DAY_OF_WEEK; i <= END_DAY; i++, n++) {
+				System.out.print((i < 10)? "   " + i : "  " +i);
+				if (n%7==0) System.out.println();	
 		}
-		
-		
-		
-		
-		
-		
 		
 	}//main method;
 }//main class;
