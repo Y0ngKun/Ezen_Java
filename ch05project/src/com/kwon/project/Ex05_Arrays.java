@@ -1,8 +1,8 @@
 package com.kwon.project;
 
 import java.util.Arrays;
-
 public class Ex05_Arrays {
+//	int mem; = > ¸â¹ö º¯¼ö
 
 	public static void main(String[] args) {
 		
