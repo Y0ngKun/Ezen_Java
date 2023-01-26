@@ -20,11 +20,11 @@ public class Ex13_02 {
 		System.out.println("소요시간" + (startTime-endTime));
 		
 		for (int i = 0; i < 300; i++) {
-			System.out.print("-");
+			System.out.print("|");
 		}
 		endTime = System.currentTimeMillis();
 		System.out.println("줄바꿈2");
-		System.out.println("소요시간2" + (startTime-endTime));
+		System.out.println("소요시간 2" + (startTime-endTime));
 		
 	}//main method;
 }//main class;
