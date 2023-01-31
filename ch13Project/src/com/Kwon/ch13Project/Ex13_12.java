@@ -1,15 +1,13 @@
 package com.Kwon.ch13Project;
 
-//ë™ê¸°í™” ì²˜ë¦¬ë¥¼ í•˜ì§€ ì•Šì€ ê²½ìš°
+//µ¿±âÈ­ Ã³¸®¸¦ ÇÏÁö ¾ÊÀº °æ¿ì
 public class Ex13_12 {
 	public static void main(String[] args) {
 		
 		Runnable r = new Runnable12();
-		//thread2ê°œê°€ run()ë©”ì„œë“œ ì‹¤í–‰
+		//thread2°³°¡ run()¸Ş¼­µå ½ÇÇà
 		Thread th1 = new Thread(r); 
 		Thread th2 = new Thread(r); 
-		
-		new Thread(r).start
 		
 		th1.start();
 		th2.start();
@@ -25,25 +23,25 @@ class Runnable12 implements Runnable {
 	public void run() {
 		while (acc.getBalance() > 0) {
 			int money = (int)((Math.random() * 3) + 1) * 100;
-			//ì¶œê¸ˆ ê¸ˆì•¡ì„ 100,200,300ì„ ë°œìƒ
+			//Ãâ±İ ±İ¾×À» 100,200,300À» ¹ß»ı
 			acc.withdraw(money);
-			System.out.println("balance:"+acc.getBalance()); //ì¶œê¸ˆ í›„ ì”ì•¡
+			System.out.println("balance:"+acc.getBalance()); //Ãâ±İ ÈÄ ÀÜ¾×
 		}		
 	}//run();
 }//class Runnable12;
 
-class Account{//ê³„ì¢Œ ì²˜ë¦¬ í´ë˜ìŠ¤ë¡œ ê³µë™ ì‚¬ìš© ìì› ê°ì²´ë¡œ ì‚¬ìš© (th1ê³¼ th2ê°€ ê³µë™ìœ¼ë¡œ ì‚¬ìš©í•˜ëŠ” ìì› = th1,th2 ì„ê³„ì˜ì—­)
+class Account{//°èÁÂ Ã³¸® Å¬·¡½º·Î °øµ¿ »ç¿ë ÀÚ¿ø °´Ã¼·Î »ç¿ë (th1°ú th2°¡ °øµ¿À¸·Î »ç¿ëÇÏ´Â ÀÚ¿ø = th1,th2 ÀÓ°è¿µ¿ª)
 	private int balance = 1000;
 	public int getBalance() {
 		return balance;
 	}
-	//ë™ê¸°í™”ë¥¼ ì²˜ë¦¬ í•˜ì§€ ì•Šì€ ë©”ì„œë“œë¡œ th1ê³¼ th2ê°€ ë™ì‹œì— ì²˜ë¦¬ í•  ìˆ˜ ìˆìŒ
-	//ì”ì•¡ ì²˜ë¦¬ê°€ ì•ˆëœ ìƒíƒœì—ì„œ ë‹¤ë¥¸ ìŠ¤ë ˆë“œê°€ ì‚¬ìš©
-	public void withdraw(int money) {//ì¶œê¸ˆ ì²˜ë¦¬ moneyëŠ” ì¶œê¸ˆ ê¸ˆì•¡
+	//µ¿±âÈ­¸¦ Ã³¸® ÇÏÁö ¾ÊÀº ¸Ş¼­µå·Î th1°ú th2°¡ µ¿½Ã¿¡ Ã³¸® ÇÒ ¼ö ÀÖÀ½
+	//ÀÜ¾× Ã³¸®°¡ ¾ÈµÈ »óÅÂ¿¡¼­ ´Ù¸¥ ½º·¹µå°¡ »ç¿ë
+	public void withdraw(int money) {//Ãâ±İ Ã³¸® money´Â Ãâ±İ ±İ¾×
 		if(balance>=money) {
 			try {
 				Thread.sleep(1000);
-				//ì²˜ë¦¬ ì•ˆì •ì„±ì„ ì£¼ê¸° ìœ„í•´ 1ì´ˆ ì§€ì—°ì‹œí‚´
+				//Ã³¸® ¾ÈÁ¤¼ºÀ» ÁÖ±â À§ÇØ 1ÃÊ Áö¿¬½ÃÅ´
 				balance -= money;
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
