@@ -45,7 +45,6 @@ public class Ex14_Lambda {
 //		}
 		
 		
-		
 	}//main method;
 	
 	int max(int a, int b) {
