@@ -33,7 +33,7 @@ public class Ex14_Lambda {
 //		() -> {return (int)(Math.random()*6);} 
 		//return시에는 한줄이라도 {} 사용해야함
 //		() -> (int)(Math.random()*6)
-		//한줄이고이고 return 생략 {} 생략 ; 생략
+		//한줄이고 return 생략 {} 생략 ; 생략
 		
 		
 //		(int[] arr) ->{
