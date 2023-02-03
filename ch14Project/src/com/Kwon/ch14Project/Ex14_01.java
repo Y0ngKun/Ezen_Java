@@ -6,9 +6,8 @@ public class Ex14_01 {
 	public static void main(String[] args) {
 		
 		//MyFunction2 인터페이스 객체는 람다식으로 추상메서드를 구현하여 대입
-		MyFunction01 f1  = () -> {
-			System.out.println("f1.run()");
-		};//람다식으로 함수형 인터페이스의 추상 메서드 활용
+		MyFunction01 f1  = () -> {System.out.println("f1.run()");};
+		//람다식으로 함수형 인터페이스의 추상 메서드 활용
 		
 		/*
 		 * 단축형 
@@ -48,10 +47,12 @@ public class Ex14_01 {
 
 }//main class;
 
-//람다식을 사용하려면 람다식을 구현할 추상 메서드가 있는 <함수형 인터페이스>를 구현해야함
+//어노테이션 @FunctionalInterface를 선언하지 않고도 람다식 사용이 가능하지만
+//컴파일러에게 추상메소드가 한 개만 있는 함수형 인터페이스인지 확인하도록 하여
+//처음부터 잘못된 인터페이스 작성막기위해 선언해주는 것이 좋다(!!)
 //함수형 인터페이스는 추상메서드가 하나(!!)만 있는 인터페이스
 @FunctionalInterface
 interface MyFunction01{
 	//함수형 인터페이스이므로 추상메서드는 하나만(!!) 존재
-	/*public abstract*/ void run(); //추상메서드는 {}블록이 없다(!!)
+	/*public abstract*/ void run(); //추상메서드는 {}블록이 없다(!!) //abstract 같은 타입은 예약어라고 부른다.
 }
