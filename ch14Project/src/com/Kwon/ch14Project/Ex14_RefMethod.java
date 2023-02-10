@@ -7,6 +7,7 @@ import java.util.function.Supplier;
 //람다식의 블록(구현부)이 하나의 메서드만 사용시에는 메서드참조로 간단히 람다식 대체 
 public class Ex14_RefMethod {
 	
+
 	public static void main(String[] args) {
 		
 	Function<String, Integer> f = (s) -> Integer.parseInt(s); //f라는 객체 생성
