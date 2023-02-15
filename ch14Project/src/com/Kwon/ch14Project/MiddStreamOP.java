@@ -5,7 +5,7 @@ import java.util.stream.Stream;
 
 public class MiddStreamOP {
 	public static void main(String[] args) {
-		
+		 
 		IntStream intStream = IntStream.rangeClosed(1, 10);
 		//1부터 10까지의 정수 값을 반환하는 스트림 객체 생성
 		
@@ -48,5 +48,7 @@ public class MiddStreamOP {
 		//sorted(comparator c) 형태로 사용
 		//String.CASE_INSENSITIVE_ORDER는 대소문자 무시하고 정렬하는 조건
 		//Comparator<String> CASE_INSENSITIVE_ORDER
+		
+		
 	}//main method;
 }//main class;
